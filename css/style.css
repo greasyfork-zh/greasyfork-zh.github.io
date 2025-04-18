@@ -1,0 +1,1049 @@
+/* CSS 重置 */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 基础样式 */
+:root {
+    --primary-color: #4c86d9;
+    --secondary-color: #3b4c7c;
+    --accent-color: #ff7a45;
+    --text-color: #333333;
+    --text-light-color: #666666;
+    --bg-color: #ffffff;
+    --bg-light: #f8f9fa;
+    --bg-dark: #2c3e50;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --container-width: 1200px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 布局和组件样式 */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* 导航栏 */
+.nav-header {
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1rem 0;
+}
+
+.nav-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-nav a {
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 0.5rem;
+    position: relative;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary-color);
+}
+
+.main-nav a:hover::after, .main-nav a.active::after {
+    width: 100%;
+}
+
+/* 英雄区域 */
+.hero-section {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    overflow: hidden;
+}
+
+.hero-section .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.hero-content .description {
+    font-size: 1.1rem;
+    color: var(--text-light-color);
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+}
+
+.cta-group {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+    flex: 1;
+}
+
+.btn.primary.mirror {
+    background-color: #ff7a45;
+}
+
+.btn.primary:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn.primary.mirror:hover {
+    background-color: #e86a3a;
+}
+
+.btn.secondary {
+    background-color: white;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    width: 100%;
+}
+
+.btn.secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+/* 关于部分 */
+.about-section {
+    padding: 5rem 0;
+    background-color: var(--bg-color);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-light-color);
+}
+
+/* 功能特点部分 */
+.features-section {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.feature-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.feature-card p {
+    color: var(--text-light-color);
+    font-size: 1rem;
+}
+
+/* 教程步骤部分 */
+.tutorial-section {
+    padding: 5rem 0;
+    background-color: var(--bg-color);
+}
+
+.tutorial-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    box-shadow: var(--shadow);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.step-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.step-card p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light-color);
+}
+
+.tutorial-link {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.tutorial-link:hover {
+    text-decoration: underline;
+}
+
+/* FAQ部分 */
+.faq-section {
+    padding: 5rem 0;
+    background-color: var(--bg-light);
+}
+
+.faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1.5rem;
+    cursor: pointer;
+    position: relative;
+    color: var(--secondary-color);
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 1.5rem;
+    transition: var(--transition);
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+    color: var(--text-light-color);
+}
+
+/* 页脚 */
+.site-footer {
+    background-color: var(--bg-dark);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 1rem;
+}
+
+.footer-logo p {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.footer-links h4,
+.footer-resources h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul,
+.footer-resources ul {
+    list-style: none;
+}
+
+.footer-links li,
+.footer-resources li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a,
+.footer-resources a {
+    color: #ddd;
+    transition: var(--transition);
+}
+
+.footer-links a:hover,
+.footer-resources a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* 教程详情页样式 */
+.tutorial-hero {
+    padding: 8rem 0 4rem;
+    background: linear-gradient(135deg, #4c86d9, #3b4c7c);
+    text-align: center;
+    color: white;
+}
+
+.tutorial-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.tutorial-hero .subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tutorial-content {
+    padding: 5rem 0;
+    background-color: var(--bg-color);
+}
+
+.tutorial-content .container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 3rem;
+}
+
+.tutorial-toc {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    padding: 2rem;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.tutorial-toc h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.tutorial-toc ul {
+    list-style: none;
+}
+
+.tutorial-toc li {
+    margin-bottom: 0.8rem;
+}
+
+.tutorial-toc a {
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.tutorial-toc a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+
+.tutorial-sections {
+    width: 100%;
+}
+
+.tutorial-section-content {
+    margin-bottom: 4rem;
+}
+
+.tutorial-section-content h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.tutorial-section-content h3 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin: 2rem 0 1rem;
+}
+
+.tutorial-section-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-light-color);
+}
+
+.access-note {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: rgba(255, 122, 69, 0.1);
+    border-left: 4px solid #ff7a45;
+    border-radius: 4px;
+}
+
+.access-note .note {
+    margin-bottom: 0;
+    color: #333;
+}
+
+.tutorial-section-content ul, 
+.tutorial-section-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.tutorial-section-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light-color);
+}
+
+.manager-options, 
+.troubleshoot-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.manager-card, 
+.troubleshoot-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    height: 100%;
+}
+
+.manager-card h3, 
+.troubleshoot-card h3 {
+    font-size: 1.3rem;
+    margin-top: 0;
+}
+
+.manager-card p {
+    margin-bottom: 1.5rem;
+}
+
+.installation-process {
+    margin: 2rem 0;
+}
+
+.installation-process ol {
+    list-style-position: inside;
+    counter-reset: item;
+    padding-left: 0;
+}
+
+.installation-process li {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.installation-process li::before {
+    counter-increment: item;
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 28px;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 50%;
+}
+
+.installation-process h3 {
+    margin-top: 0;
+    margin-left: 0;
+}
+
+.installation-steps {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.installation-steps h3 {
+    margin-top: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 992px) {
+    .hero-section .container {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .step-card {
+        min-height: auto;
+    }
+    
+    .tutorial-content .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .tutorial-toc {
+        position: static;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    .features-grid,
+    .tutorial-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .installation-process h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .tutorial-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .tutorial-hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .mirror-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .mirror-features li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        background-color: rgba(76, 134, 217, 0.05);
+        border-radius: var(--border-radius);
+    }
+    
+    .mirror-features .feature-icon {
+        margin-bottom: 0.5rem;
+    }
+    
+    .mirror-features .feature-text {
+        padding-top: 0;
+    }
+    
+    .tips-card {
+        padding: 1.5rem;
+    }
+}
+
+/* 镜像站部分 */
+.mirror-section {
+    padding: 5rem 0;
+    background-color: var(--bg-color);
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+.mirror-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
+
+.mirror-info h3 {
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.2rem;
+}
+
+.mirror-info p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-light-color);
+    line-height: 1.6;
+}
+
+.mirror-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.mirror-features li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.mirror-features .feature-icon {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(76, 134, 217, 0.1);
+    border-radius: 50%;
+}
+
+.mirror-features .feature-text {
+    flex: 1;
+    padding-top: 0.25rem;
+}
+
+.mirror-cta {
+    margin: 2rem 0;
+}
+
+.mirror-cta .btn {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+}
+
+.mirror-cta .btn:hover {
+    background-color: #e86a3a;
+}
+
+.mirror-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.tips-card {
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    height: 100%;
+}
+
+.tips-card h4 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.tips-card p {
+    color: var(--text-light-color);
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .hero-section .container {
+        flex-direction: column;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .cta-buttons {
+        justify-content: center;
+    }
+    
+    .step-card {
+        min-height: auto;
+    }
+    
+    .tutorial-content .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .tutorial-toc {
+        position: static;
+        margin-bottom: 2rem;
+    }
+    
+    .mirror-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .mirror-info {
+        order: 1;
+    }
+    
+    .mirror-tips {
+        order: 2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    .features-grid,
+    .tutorial-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .installation-process h3 {
+        font-size: 1.2rem;
+    }
+    
+    .mirror-tips {
+        grid-template-columns: 1fr;
+    }
+    
+    .mirror-cta .btn {
+        width: 100%;
+    }
+    
+    .mirror-features li {
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .cta-group {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .tutorial-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .tutorial-hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .mirror-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .mirror-features li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        background-color: rgba(76, 134, 217, 0.05);
+        border-radius: var(--border-radius);
+    }
+    
+    .mirror-features .feature-icon {
+        margin-bottom: 0.5rem;
+    }
+    
+    .mirror-features .feature-text {
+        padding-top: 0;
+    }
+    
+    .mirror-cta .btn {
+        width: 100%;
+    }
+    
+    .mirror-features li {
+        flex-wrap: wrap;
+    }
+    
+    .mirror-features .feature-icon {
+        margin-bottom: 0.5rem;
+    }
+    
+    .tips-card {
+        padding: 1.5rem;
+    }
+} 

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreasyFork使用教程 | GreasyFork镜像站 - 油猴脚本安装与管理详解</title>
+    <meta name="keywords" content="greasyfork教程,greasyfork镜像站,greasyfork-zh,油猴脚本安装,tampermonkey使用,greasyfork中文,用户脚本设置">
+    <meta name="description" content="GreasyFork脚本宝库提供详细的油猴脚本安装与管理教程，以及GreasyFork镜像站(greasyfork-zh.org)的使用指南。从脚本管理器安装到脚本使用配置的全流程指南，帮助用户轻松获取和使用各类实用脚本。">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="canonical" href="https://greasyfork-zh.github.io/tutorial.html" />
+</head>
+<body>
+    <div id="app">
+        <header class="nav-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="./index.html">
+                        <span>GreasyFork脚本宝库</span>
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html#about">关于GreasyFork</a></li>
+                        <li><a href="index.html#features">功能特点</a></li>
+                        <li><a href="index.html#mirror">GreasyFork镜像站</a></li>
+                        <li><a href="#" class="active">使用教程</a></li>
+                        <li><a href="index.html#faq">常见问题</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="tutorial-hero">
+            <div class="container">
+                <h1>GreasyFork 使用教程</h1>
+                <p class="subtitle">从零开始学习使用用户脚本，提升您的网页浏览体验</p>
+            </div>
+        </section>
+
+        <section class="tutorial-content">
+            <div class="container">
+                <div class="tutorial-toc">
+                    <h2>目录</h2>
+                    <ul>
+                        <li><a href="#intro">什么是用户脚本</a></li>
+                        <li><a href="#install-manager">安装脚本管理器</a></li>
+                        <li><a href="#find-scripts">查找和选择脚本</a></li>
+                        <li><a href="#install-scripts">安装脚本</a></li>
+                        <li><a href="#manage-scripts">管理已安装脚本</a></li>
+                        <li><a href="#troubleshoot">常见问题排查</a></li>
+                        <li><a href="#advanced">高级用法</a></li>
+                    </ul>
+                </div>
+
+                <div class="tutorial-sections">
+                    <section id="intro" class="tutorial-section-content">
+                        <h2>什么是用户脚本</h2>
+                        <p>用户脚本是一段JavaScript代码，可以通过浏览器扩展（如Tampermonkey或Violentmonkey）添加到您的浏览器中。它们可以修改网页的功能和外观，增强您的浏览体验。</p>
+                        
+                        <p>用户脚本的工作原理是在网页加载时注入自定义JavaScript代码，这些代码可以：</p>
+                        <ul>
+                            <li>移除广告和弹窗</li>
+                            <li>改变网站的布局和设计</li>
+                            <li>添加新功能和按钮</li>
+                            <li>自动填充表单</li>
+                            <li>解锁受限内容</li>
+                            <li>下载受保护的媒体</li>
+                        </ul>
+                        
+                        <p>GreasyFork是全球最大的用户脚本分享平台之一，提供了数千个免费的用户脚本，涵盖各种实用功能和工具。</p>
+                    </section>
+
+                    <section id="install-manager" class="tutorial-section-content">
+                        <h2>安装脚本管理器</h2>
+                        <p>在使用GreasyFork上的脚本之前，您需要先安装一个脚本管理器扩展。以下是针对不同浏览器的推荐选择：</p>
+                        
+                        <div class="manager-options">
+                            <div class="manager-card">
+                                <h3>Chrome / Edge / Brave</h3>
+                                <p>推荐使用 <strong>Tampermonkey</strong>，这是最流行和功能最完善的脚本管理器。</p>
+                                <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo" target="_blank" class="btn secondary">获取Tampermonkey</a>
+                            </div>
+                            
+                            <div class="manager-card">
+                                <h3>Firefox</h3>
+                                <p>推荐使用 <strong>Violentmonkey</strong> 或 <strong>Tampermonkey</strong>，两者都提供出色的兼容性和性能。</p>
+                                <a href="https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/" target="_blank" class="btn secondary">获取Violentmonkey</a>
+                            </div>
+                            
+                            <div class="manager-card">
+                                <h3>Safari</h3>
+                                <p>Safari用户可以使用 <strong>Tampermonkey</strong>，虽然功能可能比其他浏览器受限。</p>
+                                <a href="https://apps.apple.com/app/tampermonkey/id1482490089" target="_blank" class="btn secondary">获取Tampermonkey</a>
+                            </div>
+                        </div>
+                        
+                        <div class="installation-steps">
+                            <h3>安装步骤：</h3>
+                            <ol>
+                                <li>点击上面对应浏览器的链接</li>
+                                <li>在扩展商店页面点击"添加到浏览器"或"安装"按钮</li>
+                                <li>确认安装提示</li>
+                                <li>安装完成后，浏览器工具栏会出现脚本管理器图标</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section id="find-scripts" class="tutorial-section-content">
+                        <h2>查找和选择脚本</h2>
+                        <p>安装好脚本管理器后，您可以开始在GreasyFork上寻找适合您需求的脚本。</p>
+                        
+                        <h3>访问GreasyFork</h3>
+                        <p>访问 <a href="https://greasyfork.org/" target="_blank">GreasyFork官网</a>。首次访问时，网站会自动检测您的浏览器语言设置，并提供相应的语言界面。</p>
+                        
+                        <div class="access-note">
+                            <p class="note"><strong>注意：</strong> 如果官网访问受限，可以尝试使用 <a href="https://greasyfork-zh.org" target="_blank">GreasyFork镜像站</a> 获取脚本资源。GreasyFork镜像站提供与官网相同的功能，是中文用户的首选替代站点，可以快速获取各类油猴脚本。</p>
+                        </div>
+                        
+                        <h3>浏览脚本的方法</h3>
+                        <ul>
+                            <li><strong>搜索功能</strong>：在页面顶部的搜索框中输入关键词，如"视频下载"、"广告屏蔽"等</li>
+                            <li><strong>分类浏览</strong>：通过网站顶部的分类菜单浏览不同类别的脚本</li>
+                            <li><strong>流行脚本</strong>：查看"热门脚本"或"最近更新"等板块，了解当下流行的脚本</li>
+                            <li><strong>特定网站脚本</strong>：搜索特定网站名称，如"bilibili"、"youtube"等，查找针对该网站的增强脚本</li>
+                        </ul>
+                        
+                        <h3>评估脚本质量的因素</h3>
+                        <ul>
+                            <li><strong>安装量</strong>：安装用户数量越多，一般表明脚本越受欢迎和可靠</li>
+                            <li><strong>更新频率</strong>：经常更新的脚本通常能更好地适应网站变化</li>
+                            <li><strong>用户评价</strong>：查看评论区用户的反馈和评分</li>
+                            <li><strong>代码公开度</strong>：GreasyFork上的脚本代码是公开的，您可以查看源代码以确保安全</li>
+                            <li><strong>作者信誉</strong>：查看脚本作者的其他作品和社区声誉</li>
+                        </ul>
+                    </section>
+
+                    <section id="install-scripts" class="tutorial-section-content">
+                        <h2>安装脚本</h2>
+                        <p>找到合适的脚本后，安装过程相对简单。以下是详细步骤：</p>
+                        
+                        <div class="installation-process">
+                            <ol>
+                                <li>
+                                    <h3>在GreasyFork上找到脚本页面</h3>
+                                    <p>点击脚本标题进入详情页，在这里您可以查看脚本的详细描述、兼容性信息和用户评价等。</p>
+                                </li>
+                                <li>
+                                    <h3>点击"安装"或"安装此脚本"按钮</h3>
+                                    <p>该按钮通常位于脚本详情页的顶部，是绿色或蓝色的明显按钮。</p>
+                                </li>
+                                <li>
+                                    <h3>确认安装</h3>
+                                    <p>点击安装按钮后，您的脚本管理器（如Tampermonkey）会自动打开一个新窗口，显示脚本的源代码和元数据。在这个窗口中，点击"安装"或"确认安装"按钮完成安装。</p>
+                                </li>
+                                <li>
+                                    <h3>验证安装</h3>
+                                    <p>安装成功后，脚本管理器会显示确认消息。您可以点击浏览器工具栏上的脚本管理器图标，确认新脚本已列在已安装脚本列表中。</p>
+                                </li>
+                            </ol>
+                        </div>
+                        
+                        <h3>安装提示：</h3>
+                        <ul>
+                            <li>安装前先阅读脚本描述，了解脚本的功能和使用方法</li>
+                            <li>注意查看脚本的权限要求，某些脚本可能需要特定权限才能正常工作</li>
+                            <li>如果脚本需要配置，安装后按照说明进行设置</li>
+                            <li>对于不确定的脚本，可以先在测试环境中尝试，确认安全后再在主力浏览器中使用</li>
+                        </ul>
+                    </section>
+
+                    <section id="manage-scripts" class="tutorial-section-content">
+                        <h2>管理已安装脚本</h2>
+                        <p>安装脚本后，您需要了解如何管理这些脚本，包括启用/禁用、配置设置、更新和删除等操作。</p>
+                        
+                        <h3>访问脚本管理界面</h3>
+                        <p>点击浏览器工具栏中的脚本管理器图标（通常是一个带有符号的方形或圆形图标），然后选择"管理面板"或"控制面板"选项。</p>
+                        
+                        <h3>基本管理功能</h3>
+                        <ul>
+                            <li>
+                                <strong>启用/禁用脚本</strong>：在脚本列表中，每个脚本名称旁边都有一个开关或复选框，可以用于临时启用或禁用脚本。
+                            </li>
+                            <li>
+                                <strong>编辑脚本</strong>：点击脚本名称或"编辑"按钮可以查看和修改脚本的源代码。这对于自定义脚本行为或修复兼容性问题很有用。
+                            </li>
+                            <li>
+                                <strong>脚本设置</strong>：许多脚本提供自定义设置选项。通常可以通过点击脚本旁边的"设置"图标或在脚本运行的网页上查找设置界面。
+                            </li>
+                            <li>
+                                <strong>更新脚本</strong>：脚本管理器会定期检查已安装脚本的更新。您也可以手动检查更新，或设置自动更新频率。
+                            </li>
+                            <li>
+                                <strong>删除脚本</strong>：如果不再需要某个脚本，可以在管理面板中选择该脚本，然后点击"删除"或垃圾桶图标将其移除。
+                            </li>
+                        </ul>
+                        
+                        <h3>高级管理功能</h3>
+                        <ul>
+                            <li>
+                                <strong>设置脚本优先级</strong>：如果多个脚本同时作用于一个网页，可以通过调整优先级控制它们的执行顺序。
+                            </li>
+                            <li>
+                                <strong>导出/导入脚本</strong>：脚本管理器通常允许导出所有脚本的备份，以及从备份文件导入脚本，方便在不同设备间同步。
+                            </li>
+                            <li>
+                                <strong>脚本运行日志</strong>：查看脚本的运行日志和控制台输出，有助于诊断脚本问题。
+                            </li>
+                            <li>
+                                <strong>自定义脚本执行时机</strong>：某些脚本管理器允许控制脚本在页面生命周期的哪个阶段执行（如"文档开始"或"文档结束"）。
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section id="troubleshoot" class="tutorial-section-content">
+                        <h2>常见问题排查</h2>
+                        <p>使用用户脚本时可能会遇到各种问题，以下是一些常见问题和解决方法：</p>
+                        
+                        <div class="troubleshoot-cards">
+                            <div class="troubleshoot-card">
+                                <h3>脚本无法安装</h3>
+                                <ul>
+                                    <li>确认您的脚本管理器已正确安装并启用</li>
+                                    <li>尝试刷新页面后重新点击安装按钮</li>
+                                    <li>检查浏览器是否阻止了脚本管理器弹出窗口</li>
+                                    <li>尝试使用另一个脚本管理器</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="troubleshoot-card">
+                                <h3>脚本已安装但不工作</h3>
+                                <ul>
+                                    <li>确认脚本已在管理面板中启用</li>
+                                    <li>检查脚本是否与当前网站兼容（查看脚本的@match或@include元数据）</li>
+                                    <li>刷新页面或清除浏览器缓存</li>
+                                    <li>检查浏览器控制台是否有错误信息（按F12打开开发者工具）</li>
+                                    <li>暂时禁用其他脚本，排除脚本冲突</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="troubleshoot-card">
+                                <h3>脚本更新后功能失效</h3>
+                                <ul>
+                                    <li>检查脚本更新日志，了解可能的变化</li>
+                                    <li>尝试回退到之前的版本（如果脚本管理器支持）</li>
+                                    <li>联系脚本作者报告问题</li>
+                                    <li>查看评论区是否有其他用户报告相同问题</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="troubleshoot-card">
+                                <h3>脚本导致网页加载缓慢</h3>
+                                <ul>
+                                    <li>检查是否安装了过多脚本</li>
+                                    <li>禁用不必要的脚本</li>
+                                    <li>查找更轻量级的替代脚本</li>
+                                    <li>联系脚本作者提供优化建议</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3>诊断步骤</h3>
+                        <ol>
+                            <li>启用脚本管理器的调试模式（通常在脚本管理器的高级设置中）</li>
+                            <li>打开浏览器的开发者工具（通常按F12）</li>
+                            <li>切换到"控制台"标签页查看错误信息</li>
+                            <li>尝试一次禁用一个脚本，确定是哪个脚本导致问题</li>
+                            <li>检查脚本是否需要特定权限或配置才能正常工作</li>
+                        </ol>
+                    </section>
+
+                    <section id="advanced" class="tutorial-section-content">
+                        <h2>高级用法</h2>
+                        <p>掌握了基础知识后，您可以探索用户脚本的更高级用法：</p>
+                        
+                        <h3>创建自己的脚本</h3>
+                        <p>如果现有脚本无法满足您的需求，您可以尝试创建自己的脚本：</p>
+                        <ol>
+                            <li>在脚本管理器中选择"创建新脚本"选项</li>
+                            <li>学习基本的脚本元数据格式（如@name、@match等）</li>
+                            <li>编写JavaScript代码实现所需功能</li>
+                            <li>测试脚本并根据需要调整</li>
+                            <li>完善后可以考虑分享到GreasyFork帮助其他用户</li>
+                        </ol>
+                        
+                        <h3>使用脚本库和API</h3>
+                        <p>许多脚本使用常见的JavaScript库来简化开发，如：</p>
+                        <ul>
+                            <li>jQuery - 简化DOM操作和AJAX请求</li>
+                            <li>GM_* API - 脚本管理器提供的特殊API，用于存储数据、发送请求等</li>
+                            <li>其他用户共享的脚本库和工具函数</li>
+                        </ul>
+                        
+                        <h3>脚本组合使用</h3>
+                        <p>多个脚本可以协同工作，创造更强大的功能组合：</p>
+                        <ul>
+                            <li>使用基础功能脚本 + 专门的增强脚本</li>
+                            <li>根据脚本的执行顺序来解决依赖关系</li>
+                            <li>学习如何让自己的脚本与其他流行脚本兼容</li>
+                        </ul>
+                        
+                        <h3>跨设备同步</h3>
+                        <p>保持多个设备上的脚本同步：</p>
+                        <ul>
+                            <li>使用浏览器自带的同步功能（如Chrome同步）</li>
+                            <li>使用脚本管理器的云同步功能（如Tampermonkey Premium）</li>
+                            <li>手动导出/导入脚本配置</li>
+                            <li>使用第三方同步服务</li>
+                        </ul>
+                        
+                        <h3>参与脚本社区</h3>
+                        <p>深入参与用户脚本社区：</p>
+                        <ul>
+                            <li>为喜欢的脚本提供反馈和建议</li>
+                            <li>报告脚本问题并提供复现步骤</li>
+                            <li>通过Fork改进现有脚本</li>
+                            <li>分享自己的脚本创作</li>
+                            <li>参与GreasyFork和其他脚本社区的讨论</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <p>GreasyFork脚本宝库</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>快速链接</h4>
+                        <ul>
+                            <li><a href="index.html#about">关于GreasyFork</a></li>
+                            <li><a href="index.html#features">功能特点</a></li>
+                            <li><a href="index.html#tutorial">使用教程</a></li>
+                            <li><a href="index.html#faq">常见问题</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-resources">
+                        <h4>相关资源</h4>
+                        <ul>
+                            <li><a href="https://greasyfork.org/" target="_blank">GreasyFork官网</a></li>
+                            <li><a href="https://greasyfork-zh.org" target="_blank">GreasyFork镜像站</a></li>
+                            <li><a href="https://www.tampermonkey.net/" target="_blank">Tampermonkey官网</a></li>
+                            <li><a href="https://violentmonkey.github.io/" target="_blank">Violentmonkey官网</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">© <script>document.write(new Date().getFullYear())</script> GreasyFork脚本宝库 - 本站仅为教育目的提供GreasyFork相关资源导航，与GreasyFork官方无关</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "如何使用GreasyFork油猴脚本",
+      "description": "详细指南教您如何安装和使用GreasyFork上的用户脚本，提升网页浏览体验",
+      "totalTime": "PT30M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "安装脚本管理器",
+          "text": "根据您使用的浏览器，安装Tampermonkey或Violentmonkey扩展"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "访问GreasyFork网站",
+          "text": "打开GreasyFork官网，浏览或搜索您需要的脚本"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "安装脚本",
+          "text": "点击脚本页面上的安装按钮，在脚本管理器中确认安装"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "管理脚本",
+          "text": "使用脚本管理器启用、禁用或配置已安装的脚本"
+        }
+      ]
+    }
+    </script>
+
+    <script src="./js/main.js"></script>
+</body>
+</html> 
